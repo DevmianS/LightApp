@@ -1,13 +1,13 @@
 import Panel from '../../UI/Panel';
 
-const BulbBase = props => {
+const BulbBase = () => {
   return (
     <Panel>
-      <div className='flex'>
-        <p>A</p>
-        <p>Q</p>
-        <p>R</p>
-        <p>S</p>
+      <div className='flex w-full justify-evenly'>
+        <p>E27</p>
+        <p>E14</p>
+        <p>GU10</p>
+        <p>G9</p>
       </div>
     </Panel>
   );
