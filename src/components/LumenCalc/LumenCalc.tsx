@@ -11,12 +11,12 @@ const LumenCalc = () => {
   return (
     <Fragment>
       <div className='flex h-full w-full flex-col gap-4 rounded-3xl bg-amber-100 p-5 pb-12'>
+        <LightTemp></LightTemp>
         <BulbCounter />
         <BulbBase />
         <SurfaceInput></SurfaceInput>
         <BrightnessSelector></BrightnessSelector>
         <LampType></LampType>
-        <LightTemp></LightTemp>
       </div>
       <ResultWindow />
     </Fragment>

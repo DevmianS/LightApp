@@ -3,12 +3,12 @@ import BrightnessButton from './BrightnessButton';
 
 const BrightnessSelector = props => {
   return (
-    <Panel classes='flex-col'>
-      <div className='flex h-full w-full basis-1 items-center justify-evenly gap-2 px-2 '>
-        <BrightnessButton size={'small'}></BrightnessButton>
-        <BrightnessButton size={'medium'}></BrightnessButton>
-        <BrightnessButton size={'big'}></BrightnessButton>
-      </div>
+    <Panel>
+      {/* <div className='flex h-full w-full items-center justify-evenly gap-2 px-2 '> */}
+      <BrightnessButton size={'small'}></BrightnessButton>
+      <BrightnessButton size={'medium'}></BrightnessButton>
+      <BrightnessButton size={'big'}></BrightnessButton>
+      {/* </div> */}
       {/* <input
         className='w-5/6 pb-10'
         type='range'

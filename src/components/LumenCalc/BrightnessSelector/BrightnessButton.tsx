@@ -7,7 +7,7 @@ const BrightnessButton = props => {
 
   return (
     <button
-      className={`${getSize()} h-full w-full rounded-3xl bg-amber-700 p-5`}
+      className={`${getSize()} h-full w-2/6 flex-shrink-0 rounded-3xl bg-amber-700 p-5 text-center`}
     >
       💡
     </button>
