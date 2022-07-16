@@ -1,7 +1,12 @@
-const MeterInput = props => {
+import { FC } from 'react';
+
+interface Props {
+  id: string;
+}
+const MeterInput: FC<Props> = ({ id }) => {
   return (
     <input
-      id={props.id}
+      id={id}
       type='number'
       min='1'
       max='10'

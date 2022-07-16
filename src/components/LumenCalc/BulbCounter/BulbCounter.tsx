@@ -2,7 +2,7 @@ import Panel from '../../UI/Panel';
 
 const BulbCounter = () => {
   return (
-    <Panel>
+    <Panel title='How many light bulbs?'>
       <div className='flex w-1/2 justify-evenly'>
         <span className='text-6xl'>💡</span>
         <span className='text-7xl font-bold'>1</span>

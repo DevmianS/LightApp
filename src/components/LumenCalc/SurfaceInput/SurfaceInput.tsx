@@ -1,9 +1,9 @@
 import Panel from '../../UI/Panel';
 import MeterInput from './MeterInput';
 
-const SurfaceInput = props => {
+const SurfaceInput = () => {
   return (
-    <Panel>
+    <Panel title='What is the size of the room?'>
       <span className='text-6xl'>🔳</span>
       <div className='flex w-1/2 items-center justify-evenly'>
         <MeterInput id='meter1' />

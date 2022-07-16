@@ -1,8 +1,8 @@
 import Panel from '../../UI/Panel';
 
-const LampType = props => {
+const LampType = () => {
   return (
-    <Panel>
+    <Panel title='Lamp type?'>
       {/* <div className='flex h-full w-full items-center justify-evenly'> */}
       <span>Z</span>
       <span>K</span>

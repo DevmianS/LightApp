@@ -10,13 +10,13 @@ import LightTemp from './LightTemp/LightTemp';
 const LumenCalc = () => {
   return (
     <Fragment>
-      <div className='flex h-full w-full flex-col gap-4 rounded-3xl bg-amber-100 p-5 pb-12'>
-        <LightTemp></LightTemp>
+      <div className='rounded-3xlp-5 flex h-full w-full flex-col items-center gap-4 bg-gray-200 py-12 '>
         <BulbCounter />
-        <BulbBase />
         <SurfaceInput></SurfaceInput>
         <BrightnessSelector></BrightnessSelector>
         <LampType></LampType>
+        <BulbBase />
+        <LightTemp></LightTemp>
       </div>
       <ResultWindow />
     </Fragment>

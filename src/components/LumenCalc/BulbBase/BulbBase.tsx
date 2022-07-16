@@ -2,7 +2,7 @@ import Panel from '../../UI/Panel';
 
 const BulbBase = () => {
   return (
-    <Panel>
+    <Panel title='Which light bulb base type?'>
       <div className='flex w-full justify-evenly'>
         <p>E27</p>
         <p>E14</p>
