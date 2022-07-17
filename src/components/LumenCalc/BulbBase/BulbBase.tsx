@@ -10,8 +10,8 @@ interface Props {
   };
 }
 const BulbBase: FC<Props> = ({ stateData: { bulbBase, setBulbBase } }) => {
-  const [selected, setSelected] = useState<bulbBase>();
-  const bulbBases = ['G9', 'GU10', 'MR16', 'E14', 'E27'];
+  const [selected, setSelected] = useState<bulbBase>('E27');
+  const bulbBases = ['E27', 'E14', 'GU10', 'MR16', 'G9'];
   const bulbBaseHandler = (base: bulbBase) => {
     setSelected(base);
     setBulbBase(base);
