@@ -1,22 +1,64 @@
+import { FC, useState } from 'react';
 import Panel from '../../UI/Panel';
-import BrightnessButton from './BrightnessButton';
+import { brightnessLevel } from '../../../types/types';
+import ButtonPrimary from '../../UI/ButtonPrimary';
 
-const BrightnessSelector = () => {
+interface Props {
+  stateData: {
+    brightnessLevel: brightnessLevel;
+    setBrightnessLevel: React.Dispatch<React.SetStateAction<brightnessLevel>>;
+  };
+}
+const BrightnessSelector: FC<Props> = ({
+  stateData: { setBrightnessLevel },
+}) => {
+  const [selected, setSelected] = useState<brightnessLevel>('medium');
+  const brightnessLevelHandler = (brightness: brightnessLevel) => {
+    if (brightness === 'low') {
+      setBrightnessLevel('low');
+      setSelected('low');
+    }
+    if (brightness === 'medium') {
+      setBrightnessLevel('medium');
+      setSelected('medium');
+    }
+    if (brightness === 'high') {
+      setBrightnessLevel('high');
+      setSelected('high');
+    }
+  };
+
+  // const getSize = () => {
+  //   if (brightness === 'low') return 'text-3xl';
+  //   if (brightness === 'medium') return 'text-5xl';
+  //   if (brightness === 'high') return 'text-7xl';
+  // };
   return (
     <Panel title='How bright you want it?'>
-      {/* <div className='flex h-full w-full items-center justify-evenly gap-2 px-2 '> */}
-      <BrightnessButton size={'small'}></BrightnessButton>
-      <BrightnessButton size={'medium'}></BrightnessButton>
-      <BrightnessButton size={'large'}></BrightnessButton>
-      {/* </div> */}
-      {/* <input
-        className='w-5/6 pb-10'
-        type='range'
-        min='1'
-        defaultValue='1'
-        max='3'
-        step='1'
-      ></input> */}
+      <ButtonPrimary
+        className='text-3xl'
+        onClick={brightnessLevelHandler}
+        id='low'
+        selected={selected === 'low'}
+      >
+        💡
+      </ButtonPrimary>
+      <ButtonPrimary
+        className='text-5xl'
+        onClick={brightnessLevelHandler}
+        id='medium'
+        selected={selected === 'medium'}
+      >
+        💡
+      </ButtonPrimary>
+      <ButtonPrimary
+        className='text-7xl'
+        onClick={brightnessLevelHandler}
+        id='high'
+        selected={selected === 'high'}
+      >
+        💡
+      </ButtonPrimary>
     </Panel>
   );
 };

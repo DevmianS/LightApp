@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { bulbsCountTypes } from '../../../types/types';
+// import { bulbsCountTypes } from '../../../types/types';
 import Panel from '../../UI/Panel';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 const BulbCounter: FC<Props> = ({ stateData: { bulbCount, setBulbCount } }) => {
   const bulbCountHandler = (addOrSubt: boolean) => {
-    const maxVal = 10;
+    const maxVal = 15;
     const minVal = 1;
     if (addOrSubt && bulbCount < maxVal) {
       setBulbCount(prevState => prevState + 1);
