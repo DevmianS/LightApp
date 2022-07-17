@@ -27,7 +27,7 @@ const LightTemp: FC<Props> = ({ stateData: { colorTemp, setColorTemp } }) => {
           id={temp}
           onClick={colorTempHandler}
           selected={selected === temp}
-          selectedStyle='shadow-inner  backdrop-blur-lg font-bold text-xl shadow-slate-600'
+          selectedStyle='shadow-inner  backdrop-blur-lg font-bold text-lg shadow-slate-600'
           className='h-full w-1/5 bg-transparent'
         >
           {temp}

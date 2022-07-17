@@ -34,9 +34,9 @@ const MeterInput: FC<Props> = ({ id, setSqMeters }) => {
         min='1'
         max='40'
         placeholder='1'
-        className='h-20 w-20 rounded-md bg-transparent bg-slate-300 text-center text-4xl font-bold'
+        className='h-20 w-20 rounded-md bg-transparent bg-slate-300 text-center text-6xl font-bold'
       ></input>
-      <span className='text-4xl font-bold'>m²</span>
+      <span className='text-6xl font-bold'>m²</span>
     </Fragment>
   );
 };

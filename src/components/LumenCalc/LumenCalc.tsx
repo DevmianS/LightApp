@@ -21,6 +21,7 @@ const LumenCalc = () => {
   const [colorTemp, setColorTemp] = useState<colorTemp>('4000K');
   const [bulbBase, setBulbBase] = useState<bulbBase>('E27');
   const [lampType, setLampType] = useState<lampType>('semi');
+  const [resultIsVisible, setResultIsVisible] = useState(false);
 
   useEffect(() => {
     console.log(colorTemp, brightnessLevel);
@@ -28,17 +29,31 @@ const LumenCalc = () => {
 
   return (
     <Fragment>
-      <div className='rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2 bg-gray-200 pb-12 pt-6 '>
-        <BulbCounter stateData={{ bulbCount, setBulbCount }} />
+      <div
+        className={`rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2 bg-gray-200 pb-12 pt-6 transition-all`}
+      >
         <SurfaceInput stateData={{ sqMeters, setSqMeters }} />
+        <BulbCounter stateData={{ bulbCount, setBulbCount }} />
         <BrightnessSelector
           stateData={{ brightnessLevel, setBrightnessLevel }}
         />
         <BulbBase stateData={{ bulbBase, setBulbBase }} />
-        <LampType stateData={{ lampType, setLampType }} />
+        {bulbBase === ('E27' || 'E14') && (
+          <LampType stateData={{ lampType, setLampType }} />
+        )}
         <LightTemp stateData={{ colorTemp, setColorTemp }} />
       </div>
-      <ResultWindow />
+      <ResultWindow
+        stateData={{
+          bulbBase,
+          sqMeters,
+          brightnessLevel,
+          colorTemp,
+          bulbCount,
+          lampType,
+        }}
+        resultVisibility={{ resultIsVisible, setResultIsVisible }}
+      />
     </Fragment>
   );
 };
