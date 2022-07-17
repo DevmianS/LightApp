@@ -6,7 +6,7 @@ interface Props {
   selected?: boolean;
   className?: string;
   id?: string;
-  children: string;
+  children: any;
   selectedStyle?: string;
 }
 const ButtonPrimary: FC<Props> = ({

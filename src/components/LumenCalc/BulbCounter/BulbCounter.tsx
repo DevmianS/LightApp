@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import ButtonPrimary from '../../UI/ButtonPrimary';
-// import { bulbsCountTypes } from '../../../types/types';
 import Panel from '../../UI/Panel';
 
 interface Props {

@@ -7,13 +7,14 @@ import BrightnessSelector from './BrightnessSelector/BrightnessSelector';
 import LampType from './LampType/LampType';
 import LightTemp from './LightTemp/LightTemp';
 
-import { brightnessLevel, colorTemp } from '../../types/types';
+import { brightnessLevel, bulbBase, colorTemp } from '../../types/types';
 const LumenCalc = () => {
   const [bulbCount, setBulbCount] = useState(1);
   const [sqMeters, setSqMeters] = useState(1);
   const [brightnessLevel, setBrightnessLevel] =
     useState<brightnessLevel>('medium');
   const [colorTemp, setColorTemp] = useState<colorTemp>('4000K');
+  const [bulbBase, setBulbBase] = useState<bulbBase>('E27');
 
   useEffect(() => {
     console.log(colorTemp, brightnessLevel);
@@ -27,7 +28,7 @@ const LumenCalc = () => {
         <BrightnessSelector
           stateData={{ brightnessLevel, setBrightnessLevel }}
         />
-        <BulbBase />
+        <BulbBase stateData={{ bulbBase, setBulbBase }} />
         <LampType />
         <LightTemp stateData={{ colorTemp, setColorTemp }} />
       </div>
