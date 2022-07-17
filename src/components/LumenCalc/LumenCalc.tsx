@@ -7,27 +7,29 @@ import BrightnessSelector from './BrightnessSelector/BrightnessSelector';
 import LampType from './LampType/LampType';
 import LightTemp from './LightTemp/LightTemp';
 
-import { brightnessLevel } from '../../types/types';
+import { brightnessLevel, colorTemp } from '../../types/types';
 const LumenCalc = () => {
   const [bulbCount, setBulbCount] = useState(1);
   const [sqMeters, setSqMeters] = useState(1);
   const [brightnessLevel, setBrightnessLevel] =
     useState<brightnessLevel>('medium');
+  const [colorTemp, setColorTemp] = useState<colorTemp>('4000K');
+
   useEffect(() => {
-    console.log(brightnessLevel);
-  }, [brightnessLevel]);
+    console.log(colorTemp, brightnessLevel);
+  }, [brightnessLevel, colorTemp]);
 
   return (
     <Fragment>
-      <div className='rounded-3xlp-5 flex h-full w-full flex-col items-center gap-4 bg-gray-200 pb-12 pt-6 '>
+      <div className='rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2 bg-gray-200 pb-12 pt-6 '>
         <BulbCounter stateData={{ bulbCount, setBulbCount }} />
-        <SurfaceInput stateData={{ sqMeters, setSqMeters }}></SurfaceInput>
+        <SurfaceInput stateData={{ sqMeters, setSqMeters }} />
         <BrightnessSelector
           stateData={{ brightnessLevel, setBrightnessLevel }}
-        ></BrightnessSelector>
-        <LampType></LampType>
+        />
         <BulbBase />
-        <LightTemp></LightTemp>
+        <LampType />
+        <LightTemp stateData={{ colorTemp, setColorTemp }} />
       </div>
       <ResultWindow />
     </Fragment>

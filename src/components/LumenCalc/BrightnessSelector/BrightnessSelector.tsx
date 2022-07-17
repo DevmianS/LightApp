@@ -14,25 +14,10 @@ const BrightnessSelector: FC<Props> = ({
 }) => {
   const [selected, setSelected] = useState<brightnessLevel>('medium');
   const brightnessLevelHandler = (brightness: brightnessLevel) => {
-    if (brightness === 'low') {
-      setBrightnessLevel('low');
-      setSelected('low');
-    }
-    if (brightness === 'medium') {
-      setBrightnessLevel('medium');
-      setSelected('medium');
-    }
-    if (brightness === 'high') {
-      setBrightnessLevel('high');
-      setSelected('high');
-    }
+    setBrightnessLevel(brightness);
+    setSelected(brightness);
   };
 
-  // const getSize = () => {
-  //   if (brightness === 'low') return 'text-3xl';
-  //   if (brightness === 'medium') return 'text-5xl';
-  //   if (brightness === 'high') return 'text-7xl';
-  // };
   return (
     <Panel title='How bright you want it?'>
       <ButtonPrimary

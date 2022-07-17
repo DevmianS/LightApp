@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import ButtonPrimary from '../../UI/ButtonPrimary';
 // import { bulbsCountTypes } from '../../../types/types';
 import Panel from '../../UI/Panel';
 
@@ -26,22 +27,22 @@ const BulbCounter: FC<Props> = ({ stateData: { bulbCount, setBulbCount } }) => {
         <span className='text-7xl font-bold'>{bulbCount}</span>
       </div>
       <div className='flex w-1/2 flex-col items-center gap-1 '>
-        <button
+        <ButtonPrimary
+          className='h-16 w-16 text-4xl'
           onClick={() => {
             bulbCountHandler(true);
           }}
-          className='text-4xl'
         >
           🔼
-        </button>
-        <button
+        </ButtonPrimary>
+        <ButtonPrimary
+          className='h-16 w-16 text-4xl'
           onClick={() => {
             bulbCountHandler(false);
           }}
-          className='text-4xl'
         >
           🔽
-        </button>
+        </ButtonPrimary>
       </div>
     </Panel>
   );
