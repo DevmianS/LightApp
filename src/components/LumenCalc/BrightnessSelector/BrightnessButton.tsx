@@ -12,7 +12,7 @@ const BrightnessButton: FC<Props> = ({ size }) => {
 
   return (
     <button
-      className={`${getSize()} h-full w-2/6 flex-shrink-0 rounded-3xl bg-amber-700 p-5 text-center`}
+      className={`${getSize()} h-full w-2/6 flex-shrink-0 rounded-3xl bg-slate-400 p-5 text-center`}
     >
       💡
     </button>
