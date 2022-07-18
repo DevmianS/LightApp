@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useContext, useEffect, useState } from 'react';
 import ResultWindow from '../ResultWindow/ResultWindow';
 import BulbBase from './BulbBase/BulbBase';
 import BulbCounter from './BulbCounter/BulbCounter';
@@ -6,6 +6,7 @@ import SurfaceInput from './SurfaceInput/SurfaceInput';
 import BrightnessSelector from './BrightnessSelector/BrightnessSelector';
 import LampType from './LampType/LampType';
 import LightTemp from './LightTemp/LightTemp';
+import { DarkModeContext } from '../../store/theme-context';
 
 import {
   brightnessLevel,
@@ -22,7 +23,7 @@ const LumenCalc = () => {
   const [bulbBase, setBulbBase] = useState<bulbBase>('E27');
   const [lampType, setLampType] = useState<lampType>('semi');
   const [resultIsVisible, setResultIsVisible] = useState(false);
-
+  const themeCtx = useContext(DarkModeContext);
   useEffect(() => {
     console.log(colorTemp, brightnessLevel);
   }, [brightnessLevel, colorTemp]);
@@ -30,7 +31,9 @@ const LumenCalc = () => {
   return (
     <Fragment>
       <div
-        className={`rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2 bg-gray-200 pb-12 pt-6 transition-all`}
+        className={`rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2  pb-6 pt-6 transition-all ${
+          themeCtx.darkModeIsOn ? 'bg-gray-800' : 'bg-gray-200'
+        }`}
       >
         <SurfaceInput stateData={{ sqMeters, setSqMeters }} />
         <BulbCounter stateData={{ bulbCount, setBulbCount }} />

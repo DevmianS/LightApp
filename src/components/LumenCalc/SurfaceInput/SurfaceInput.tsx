@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 import Panel from '../../UI/Panel';
 import MeterInput from './MeterInput';
 
@@ -8,6 +8,7 @@ interface Props {
     setSqMeters: React.Dispatch<React.SetStateAction<number>>;
   };
 }
+
 const SurfaceInput: FC<Props> = ({ stateData: { sqMeters, setSqMeters } }) => {
   return (
     <Panel title='What is the size of the room?'>

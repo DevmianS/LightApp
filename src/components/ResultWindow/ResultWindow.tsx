@@ -5,6 +5,7 @@ import {
   colorTemp,
   lampType,
 } from '../../types/types';
+import Controls from '../LumenCalc/Controls/Controls';
 
 interface Props {
   stateData: {
@@ -45,15 +46,16 @@ const ResultWindow: FC<Props> = ({
   };
   return (
     <div
-      className={`fixed bottom-0 left-0 flex h-1/2 w-full  translate-y-[90%] items-center justify-center rounded-t-2xl bg-gray-600 shadow-xl transition-all duration-500 ease-in ${
+      className={`fixed bottom-0 left-0 flex h-1/2 w-full  translate-y-[90%] items-end justify-center rounded-t-2xl bg-gray-600 shadow-xl transition-all duration-500 ease-in ${
         resultIsVisible ? 'translate-y-0' : ''
       }`}
     >
+      <Controls />
       <div
         onClick={resultWindowHandler}
         className='absolute top-4 my-2 h-1.5 w-1/3 rounded-full bg-black'
       ></div>
-      <div className='flex h-4/5 w-11/12 flex-col items-center justify-center rounded-2xl bg-slate-400'>
+      <div className='flex h-[90%] w-11/12 flex-col items-center justify-center rounded-t-2xl bg-slate-400'>
         <span className='text-center font-semibold'>
           You need {bulbCount}x💡 with {bulbBase} base type,
           {Math.round((sqMeters * 140) / bulbCount)} lumens and color value of
