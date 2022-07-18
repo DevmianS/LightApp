@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { lampType } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
+import { getLang } from '../../../Utlis/utlis';
 
 interface Props {
   stateData: {
@@ -34,7 +35,9 @@ const LampType: FC<Props> = ({ stateData: { lampType, setLampType } }) => {
     });
   };
 
-  return <Panel title='Lamp type?'>{renderButtons()}</Panel>;
+  return (
+    <Panel title={getLang('Lamp type?', 'Typ lampy?')}>{renderButtons()}</Panel>
+  );
 };
 
 export default LampType;

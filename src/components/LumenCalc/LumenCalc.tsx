@@ -7,6 +7,7 @@ import BrightnessSelector from './BrightnessSelector/BrightnessSelector';
 import LampType from './LampType/LampType';
 import LightTemp from './LightTemp/LightTemp';
 import { DarkModeContext } from '../../store/theme-context';
+import LangContext from '../../store/lang-context';
 
 import {
   brightnessLevel,
@@ -24,12 +25,9 @@ const LumenCalc = () => {
   const [lampType, setLampType] = useState<lampType>('semi');
   const [resultIsVisible, setResultIsVisible] = useState(false);
   const themeCtx = useContext(DarkModeContext);
-  useEffect(() => {
-    console.log(colorTemp, brightnessLevel);
-  }, [brightnessLevel, colorTemp]);
 
   return (
-    <Fragment>
+    <LangContext>
       <div
         className={`rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2  pb-6 pt-6 transition-all ${
           themeCtx.darkModeIsOn ? 'bg-gray-800' : 'bg-gray-200'
@@ -41,7 +39,7 @@ const LumenCalc = () => {
           stateData={{ brightnessLevel, setBrightnessLevel }}
         />
         <BulbBase stateData={{ bulbBase, setBulbBase }} />
-        {bulbBase === ('E27' || 'E14') && (
+        {(bulbBase === 'E27' || bulbBase === 'E14') && (
           <LampType stateData={{ lampType, setLampType }} />
         )}
         <LightTemp stateData={{ colorTemp, setColorTemp }} />
@@ -57,7 +55,7 @@ const LumenCalc = () => {
         }}
         resultVisibility={{ resultIsVisible, setResultIsVisible }}
       />
-    </Fragment>
+    </LangContext>
   );
 };
 

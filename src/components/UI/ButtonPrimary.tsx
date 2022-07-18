@@ -23,9 +23,9 @@ const ButtonPrimary: FC<Props> = ({
       onClick={() => {
         onClick(id);
       }}
-      className={`h-24 w-24 flex-shrink-0 rounded-2xl bg-slate-400 text-center drop-shadow-md transition-all ${
+      className={`h-24 w-24 flex-shrink-0 rounded-2xl bg-slate-400 text-center  transition-all ${
         selected && selectedStyle
-      } ${className}`}
+      } ${!selected && 'drop-shadow-lg'} ${className}`}
     >
       {children}
     </button>

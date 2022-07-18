@@ -46,8 +46,8 @@ const ResultWindow: FC<Props> = ({
   };
   return (
     <div
-      className={`fixed bottom-0 left-0 flex h-1/2 w-full  translate-y-[90%] items-end justify-center rounded-t-2xl bg-gray-600 shadow-xl transition-all duration-500 ease-in ${
-        resultIsVisible ? 'translate-y-0' : ''
+      className={`fixed bottom-0 left-0 flex h-96 w-full translate-y-[338px]  flex-col items-center justify-center rounded-t-2xl bg-gray-600 shadow-xl transition-all duration-500 ease-in ${
+        resultIsVisible ? 'translate-y-[0px]' : ''
       }`}
     >
       <Controls />

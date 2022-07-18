@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import Panel from '../../UI/Panel';
 import { brightnessLevel } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
+import { getLang } from '../../../Utlis/utlis';
 
 interface Props {
   stateData: {
@@ -19,7 +20,7 @@ const BrightnessSelector: FC<Props> = ({
   };
 
   return (
-    <Panel title='How bright you want it?'>
+    <Panel title={getLang('How bright you want it?', 'Jak jasno ma być?')}>
       <ButtonPrimary
         className='text-3xl'
         onClick={brightnessLevelHandler}

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
+import { getLang } from '../../../Utlis/utlis';
 
 interface Props {
   stateData: {
@@ -20,7 +21,9 @@ const BulbCounter: FC<Props> = ({ stateData: { bulbCount, setBulbCount } }) => {
   };
 
   return (
-    <Panel title='How many light bulbs?'>
+    <Panel
+      title={getLang('How many light bulbs?', 'Ile żarówek potrzebujesz?')}
+    >
       <div className='flex w-1/2 justify-evenly'>
         <span className='text-6xl'>💡</span>
         <span className='text-7xl font-bold'>{bulbCount}</span>

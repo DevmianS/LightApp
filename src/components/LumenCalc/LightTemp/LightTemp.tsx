@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { colorTemp } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
+import { getLang } from '../../../Utlis/utlis';
 
 interface Props {
   stateData: {
@@ -37,7 +38,12 @@ const LightTemp: FC<Props> = ({ stateData: { colorTemp, setColorTemp } }) => {
   };
 
   return (
-    <Panel title='Select Light Temperature(Color)'>
+    <Panel
+      title={getLang(
+        'Which light color do you want?',
+        'Jaka ma być barwa światła?'
+      )}
+    >
       <div className='flex h-1/2 w-full items-center justify-evenly rounded-md bg-gradient-to-r from-amber-500 via-white to-blue-300'>
         {renderButtons()}
       </div>

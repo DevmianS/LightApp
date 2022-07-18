@@ -1,6 +1,7 @@
-import { FC, useContext, useEffect, useState } from 'react';
+import { FC } from 'react';
 import Panel from '../../UI/Panel';
 import MeterInput from './MeterInput';
+import { getLang } from '../../../Utlis/utlis';
 
 interface Props {
   stateData: {
@@ -11,12 +12,15 @@ interface Props {
 
 const SurfaceInput: FC<Props> = ({ stateData: { sqMeters, setSqMeters } }) => {
   return (
-    <Panel title='What is the size of the room?'>
+    <Panel
+      title={getLang(
+        'What is the area of ​​the room?',
+        'Jaka jest powierzchnia pokoju?'
+      )}
+    >
       <span className='text-6xl'>🔳</span>
       <div className='flex w-1/2 items-center justify-center'>
         <MeterInput setSqMeters={setSqMeters} id='meter1' />
-        {/* <span className='text-4xl'>x</span>
-        <MeterInput setMeter={setMeter2} id='meter2' /> */}
       </div>
     </Panel>
   );

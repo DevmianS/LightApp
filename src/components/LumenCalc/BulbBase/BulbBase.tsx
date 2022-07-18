@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { bulbBase } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
+import { getLang } from '../../../Utlis/utlis';
 
 interface Props {
   stateData: {
@@ -35,7 +36,12 @@ const BulbBase: FC<Props> = ({ stateData: { bulbBase, setBulbBase } }) => {
   };
 
   return (
-    <Panel title='Which light bulb base type?'>
+    <Panel
+      title={getLang(
+        'Which light bulb base type?',
+        'Jaki masz trzonek żarówki?'
+      )}
+    >
       <div className='flex h-full items-center gap-4 overflow-x-auto px-2'>
         {renderButtons()}
       </div>
