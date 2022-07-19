@@ -41,7 +41,7 @@ const LightTemp: FC<Props> = ({ stateData: { colorTemp, setColorTemp } }) => {
     <Panel
       title={getLang(
         'Which light color do you want?',
-        'Jaka ma być barwa światła?'
+        'Który kolor światła chcesz?'
       )}
     >
       <div className='flex h-1/2 w-full items-center justify-evenly rounded-md bg-gradient-to-r from-amber-500 via-white to-blue-300'>
