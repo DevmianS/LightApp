@@ -2,7 +2,9 @@ import { FC } from 'react';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
 import { getLang } from '../../../utlis/utlis';
-
+import bulb from '../../../assets/icons/bulb.svg';
+import arrowup from '../../../assets/icons/arrowup.svg';
+import arrowdown from '../../../assets/icons/arrowdown.svg';
 interface Props {
   stateData: {
     bulbCount: number;
@@ -24,9 +26,10 @@ const BulbCounter: FC<Props> = ({ stateData: { bulbCount, setBulbCount } }) => {
     <Panel
       title={getLang('How many light bulbs?', 'Ile żarówek potrzebujesz?')}
     >
-      <div className='flex w-1/2 justify-evenly'>
-        <span className='text-6xl'>💡</span>
-        <span className='text-7xl font-bold'>{bulbCount}</span>
+      <div className='relative flex w-1/2 items-end justify-evenly'>
+        {/* <span className='text-6xl'>💡</span> */}
+        <img className='h-36' src={bulb} alt='' />
+        <span className='absolute pb-12 text-5xl font-bold'>{bulbCount}</span>
       </div>
       <div className='flex w-1/2 flex-col items-center gap-1 '>
         <ButtonPrimary
@@ -35,7 +38,7 @@ const BulbCounter: FC<Props> = ({ stateData: { bulbCount, setBulbCount } }) => {
             bulbCountHandler(true);
           }}
         >
-          🔼
+          <img src={arrowup} alt='' />
         </ButtonPrimary>
         <ButtonPrimary
           className='h-16 w-16 text-4xl'
@@ -43,7 +46,7 @@ const BulbCounter: FC<Props> = ({ stateData: { bulbCount, setBulbCount } }) => {
             bulbCountHandler(false);
           }}
         >
-          🔽
+          <img src={arrowdown} alt='' />
         </ButtonPrimary>
       </div>
     </Panel>

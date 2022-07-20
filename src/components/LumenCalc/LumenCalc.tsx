@@ -30,7 +30,7 @@ const LumenCalc = () => {
   return (
     <LangContext>
       <div
-        className={`flex h-full w-full flex-col items-center gap-2 rounded-b-3xl pt-6 transition-all ${
+        className={`flex h-full w-full flex-col items-center gap-2 rounded-b-3xl py-6 transition-all md:grid md:grid-cols-2 md:rounded-t-3xl  ${
           themeCtx.darkModeIsOn ? 'bg-gray-800' : 'bg-gray-200'
         }`}
       >

@@ -14,16 +14,25 @@ const Footer = () => {
       <div className='col-span-1 row-span-2 flex flex-col items-start justify-start p-4 '>
         <div className='flex gap-1'>
           <img className='h-6 w-6' src={mailicon} alt='github' />
-          <a href='mailto:damiansobierajdev@gmail.com'>Email</a>
+          <a target={'_blank'} href='mailto:damiansobierajdev@gmail.com'>
+            Email
+          </a>
         </div>
 
         <div className='flex gap-1'>
           <img className='h-6 w-6' src={linkedinlogo} alt='github' />
-          <a href='https://www.linkedin.com/in/damiansobieraj/'>LinkedIn</a>
+          <a
+            target={'_blank'}
+            href='https://www.linkedin.com/in/damiansobieraj/'
+          >
+            LinkedIn
+          </a>
         </div>
         <div className='flex gap-1'>
           <img className='h-6 w-6' src={githublogo} alt='github' />
-          <a href='https://github.com/DevmianS'>Github</a>
+          <a target={'_blank'} href='https://github.com/DevmianS'>
+            Github
+          </a>
         </div>
       </div>
       <span className='col-span-2 self-end justify-self-center'>
