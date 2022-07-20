@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { bulbBase } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
-import { getLang } from '../../../utlis/utlis';
+import { getLang } from '../../../utils/utils';
 
 interface Props {
   stateData: {

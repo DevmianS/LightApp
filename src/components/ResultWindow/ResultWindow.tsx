@@ -5,7 +5,7 @@ import {
   colorTemp,
   lampType,
 } from '../../types/types';
-import { getLang } from '../../utlis/utlis';
+import { getLang } from '../../utils/utils';
 import Controls from '../LumenCalc/Controls/Controls';
 import ResultTile from './ResultTile';
 

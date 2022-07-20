@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
-import { getLang } from '../../../utlis/utlis';
+import { getLang } from '../../../utils/utils';
 import bulb from '../../../assets/icons/bulb.svg';
 import arrowup from '../../../assets/icons/arrowup.svg';
 import arrowdown from '../../../assets/icons/arrowdown.svg';

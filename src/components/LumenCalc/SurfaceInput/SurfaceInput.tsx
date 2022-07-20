@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Panel from '../../UI/Panel';
 import MeterInput from './MeterInput';
-import { getLang } from '../../../utlis/utlis';
+import { getLang } from '../../../utils/utils';
 import surfaceicon from '../../../assets/icons/surface.svg';
 
 interface Props {
