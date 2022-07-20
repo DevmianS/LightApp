@@ -15,11 +15,12 @@ import {
   colorTemp,
   lampType,
 } from '../../types/types';
+import Footer from '../Footer/Footer';
 const LumenCalc = () => {
   const [bulbCount, setBulbCount] = useState(1);
   const [sqMeters, setSqMeters] = useState(1);
   const [brightnessLevel, setBrightnessLevel] =
-    useState<brightnessLevel>('medium');
+    useState<brightnessLevel>('200');
   const [colorTemp, setColorTemp] = useState<colorTemp>('4000K');
   const [bulbBase, setBulbBase] = useState<bulbBase>('E27');
   const [lampType, setLampType] = useState<lampType>('semi');
@@ -29,7 +30,7 @@ const LumenCalc = () => {
   return (
     <LangContext>
       <div
-        className={`rounded-3xlp-5 flex h-full w-full flex-col items-center gap-2  pb-6 pt-6 transition-all ${
+        className={`flex h-full w-full flex-col items-center gap-2 rounded-b-3xl pt-6 transition-all ${
           themeCtx.darkModeIsOn ? 'bg-gray-800' : 'bg-gray-200'
         }`}
       >
@@ -55,6 +56,7 @@ const LumenCalc = () => {
         }}
         resultVisibility={{ resultIsVisible, setResultIsVisible }}
       />
+      <Footer></Footer>
     </LangContext>
   );
 };

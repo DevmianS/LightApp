@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { bulbBase } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
-import { getLang } from '../../../Utlis/utlis';
+import { getLang } from '../../../utlis/utlis';
 
 interface Props {
   stateData: {
@@ -23,7 +23,7 @@ const BulbBase: FC<Props> = ({ stateData: { bulbBase, setBulbBase } }) => {
       return (
         <ButtonPrimary
           key={base}
-          id={base}
+          data={base}
           className='flex flex-col items-center justify-center'
           onClick={bulbBaseHandler}
           selected={selected === base}

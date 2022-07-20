@@ -5,7 +5,7 @@ import {
   colorTemp,
   lampType,
 } from '../../types/types';
-import { getLang } from '../../Utlis/utlis';
+import { getLang } from '../../utlis/utlis';
 import Controls from '../LumenCalc/Controls/Controls';
 import ResultTile from './ResultTile';
 
@@ -47,25 +47,27 @@ const ResultWindow: FC<Props> = ({
     if (colorTemp === '6500K') return 'left-[92%]';
   };
   const calculator = () => {
-    const getBrightnessLumens = () => {
-      if (brightnessLevel === 'low') return 100;
-      if (brightnessLevel === 'high') return 300;
-      else return 150;
-    };
-    const lumenPerMeter = getBrightnessLumens();
-    return Math.round((sqMeters * lumenPerMeter) / bulbCount);
+    // const getBrightnessLumens = () => {
+    //   if (brightnessLevel === 'low') return 100;
+    //   if (brightnessLevel === 'high') return 300;
+    //   else return 150;
+    // };
+    // const lumenPerMeter = getBrightnessLumens();
+    return Math.round((sqMeters * +brightnessLevel) / bulbCount);
   };
   return (
     <div
-      className={`fixed bottom-0 left-0 flex h-96 w-full translate-y-[338px]  flex-col items-center justify-between rounded-t-2xl bg-gray-600 shadow-xl transition-all duration-500 ease-in ${
+      className={`fixed bottom-0 left-0 flex h-96 w-full translate-y-[338px] flex-col items-center justify-between rounded-t-2xl bg-gray-700 shadow-xl transition-all duration-500 ease-in  ${
         resultIsVisible ? 'translate-y-[0px]' : ''
       }`}
     >
       <Controls />
-      <div
+      <button
         onClick={resultWindowHandler}
-        className='absolute top-4 my-2 h-1.5 w-1/3  rounded-full bg-black'
-      ></div>
+        className='absolute -top-1 my-2 h-10 w-1/3  rounded-full  bg-gray-800 text-lg font-bold  uppercase text-slate-200'
+      >
+        {getLang('Result', 'Wynik')}
+      </button>
       <div className='grid h-[85%] w-11/12 grid-cols-2 grid-rows-2 items-center justify-center gap-4 rounded-t-2xl bg-slate-400 p-2'>
         <ResultTile data={{ title: getLang('Bulbs count', 'Ilość żarówek') }}>
           <span className='text-center font-semibold'>{bulbCount}x💡</span>

@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { colorTemp } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
-import { getLang } from '../../../Utlis/utlis';
+import { getLang } from '../../../utlis/utlis';
 
 interface Props {
   stateData: {
@@ -25,7 +25,7 @@ const LightTemp: FC<Props> = ({ stateData: { colorTemp, setColorTemp } }) => {
       return (
         <ButtonPrimary
           key={temp}
-          id={temp}
+          data={temp}
           onClick={colorTempHandler}
           selected={selected === temp}
           selectedStyle='shadow-inner  backdrop-blur-lg font-bold text-lg shadow-slate-600'

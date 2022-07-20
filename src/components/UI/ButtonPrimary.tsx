@@ -5,23 +5,23 @@ interface Props {
   onClick: any;
   selected?: boolean;
   className?: string;
-  id?: string;
+  data?: string;
   children: any;
   selectedStyle?: string;
 }
 const ButtonPrimary: FC<Props> = ({
   onClick,
   selected,
-  id,
+  data,
   children,
   className,
   selectedStyle = 'z-10 scale-90 bg-amber-500 shadow-inner font-bold shadow-slate-600',
 }) => {
   return (
     <button
-      id={id}
+      data-data={data}
       onClick={() => {
-        onClick(id);
+        onClick(data);
       }}
       className={`h-24 w-24 flex-shrink-0 rounded-2xl bg-slate-400 text-center  transition-all ${
         selected && selectedStyle

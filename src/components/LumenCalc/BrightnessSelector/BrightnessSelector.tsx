@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import Panel from '../../UI/Panel';
 import { brightnessLevel } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
-import { getLang } from '../../../Utlis/utlis';
+import { getLang } from '../../../utlis/utlis';
 
 interface Props {
   stateData: {
@@ -13,7 +13,7 @@ interface Props {
 const BrightnessSelector: FC<Props> = ({
   stateData: { setBrightnessLevel },
 }) => {
-  const [selected, setSelected] = useState<brightnessLevel>('medium');
+  const [selected, setSelected] = useState<brightnessLevel>('200');
   const brightnessLevelHandler = (brightness: brightnessLevel) => {
     setBrightnessLevel(brightness);
     setSelected(brightness);
@@ -24,24 +24,24 @@ const BrightnessSelector: FC<Props> = ({
       <ButtonPrimary
         className='text-3xl'
         onClick={brightnessLevelHandler}
-        id='low'
-        selected={selected === 'low'}
+        data='120'
+        selected={selected === '120'}
       >
         💡
       </ButtonPrimary>
       <ButtonPrimary
         className='text-5xl'
         onClick={brightnessLevelHandler}
-        id='medium'
-        selected={selected === 'medium'}
+        data='200'
+        selected={selected === '200'}
       >
         💡
       </ButtonPrimary>
       <ButtonPrimary
         className='text-7xl'
         onClick={brightnessLevelHandler}
-        id='high'
-        selected={selected === 'high'}
+        data='300'
+        selected={selected === '300'}
       >
         💡
       </ButtonPrimary>

@@ -22,7 +22,7 @@ const LangToggle: FC<Props> = ({ lang, onClick }) => {
       }}
     >
       <img
-        src={langCtx.language === 'EN' ? EN : PL}
+        src={langCtx.language === 'EN' ? PL : EN}
         className={`h-7 w-7 rounded-full transition-all duration-700 ease-in-out ${
           lang === 'PL' && 'translate-x-9'
         }`}

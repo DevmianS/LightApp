@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Panel from '../../UI/Panel';
 import MeterInput from './MeterInput';
-import { getLang } from '../../../Utlis/utlis';
+import { getLang } from '../../../utlis/utlis';
 
 interface Props {
   stateData: {

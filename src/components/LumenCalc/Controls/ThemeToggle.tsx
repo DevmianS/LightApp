@@ -14,12 +14,12 @@ const ThemeToggle: FC<Props> = ({ onOff, onClick }) => {
     >
       <div
         className={`absolute z-10 h-6 w-6 rounded-full bg-slate-800 transition-all delay-100 duration-500 ${
-          onOff ? 'translate-x-8' : '-translate-x-8 delay-[0ms] duration-700'
+          !onOff ? 'translate-x-8' : '-translate-x-8 delay-[0ms] duration-700'
         }`}
       ></div>
       <div
         className={`h-7 w-7 rounded-full bg-yellow-500 transition-all duration-700 ease-in-out ${
-          onOff && 'translate-x-9'
+          !onOff && 'translate-x-9'
         }`}
       ></div>
     </button>

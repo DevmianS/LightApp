@@ -17,7 +17,7 @@ body {
   /* width: 100%; */
   font-family: 'Comfortaa', cursive;
   background-color: var(--color-dark);
-  background-color: #000000;
+  background-color: #64748b;
   scroll-behavior: smooth;
 }
 #root {

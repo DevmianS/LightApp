@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { lampType } from '../../../types/types';
 import ButtonPrimary from '../../UI/ButtonPrimary';
 import Panel from '../../UI/Panel';
-import { getLang } from '../../../Utlis/utlis';
+import { getLang } from '../../../utlis/utlis';
 
 interface Props {
   stateData: {
@@ -24,7 +24,7 @@ const LampType: FC<Props> = ({ stateData: { lampType, setLampType } }) => {
       return (
         <ButtonPrimary
           key={type}
-          id={type}
+          data={type}
           onClick={lampTypeHandler}
           selected={selected === type}
           className='flex flex-col items-center justify-center'
