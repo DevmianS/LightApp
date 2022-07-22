@@ -46,6 +46,14 @@ const ResultWindow: FC<Props> = ({
     if (colorTemp === '6000K') return 'left-[70%]';
     if (colorTemp === '6500K') return 'left-[92%]';
   };
+
+  const getLampType = (val: number) => {
+    //lamp type to additional lumen percent per bulb
+    if (lampType === 'closed') return val * 0.4;
+    if (lampType === 'semi') return val * 0.2;
+    else return 0;
+  };
+
   const calculator = () => {
     // const getBrightnessLumens = () => {
     //   if (brightnessLevel === 'low') return 100;
@@ -53,7 +61,10 @@ const ResultWindow: FC<Props> = ({
     //   else return 150;
     // };
     // const lumenPerMeter = getBrightnessLumens();
-    return Math.round((sqMeters * +brightnessLevel) / bulbCount);
+
+    return Math.round(
+      (sqMeters * +brightnessLevel + getLampType(+brightnessLevel)) / bulbCount
+    );
   };
   return (
     <div
