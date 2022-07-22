@@ -40,7 +40,7 @@ const LumenCalc = () => {
           stateData={{ brightnessLevel, setBrightnessLevel }}
         />
         <BulbBase stateData={{ bulbBase, setBulbBase }} />
-        {(bulbBase === 'E27' || bulbBase === 'E14') && (
+        {(bulbBase === 'E27' || bulbBase === 'E14' || bulbBase === 'G9') && (
           <LampType stateData={{ lampType, setLampType }} />
         )}
         <LightTemp stateData={{ colorTemp, setColorTemp }} />
