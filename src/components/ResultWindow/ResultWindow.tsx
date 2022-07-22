@@ -55,16 +55,14 @@ const ResultWindow: FC<Props> = ({
   };
 
   const calculator = () => {
-    // const getBrightnessLumens = () => {
-    //   if (brightnessLevel === 'low') return 100;
-    //   if (brightnessLevel === 'high') return 300;
-    //   else return 150;
-    // };
-    // const lumenPerMeter = getBrightnessLumens();
+    const roundToTen = (num: number) => {
+      return Math.ceil(num / 10) * 10;
+    };
 
-    return Math.round(
-      (sqMeters * +brightnessLevel + getLampType(+brightnessLevel)) / bulbCount
-    );
+    const lumensPerSqMeter = sqMeters * +brightnessLevel;
+    const lumensPlusLampType = getLampType(lumensPerSqMeter);
+    const lumensPerBulb = (lumensPerSqMeter + lumensPlusLampType) / bulbCount;
+    return roundToTen(lumensPerBulb);
   };
   return (
     <div
