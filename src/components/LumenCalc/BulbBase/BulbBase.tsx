@@ -17,30 +17,10 @@ interface Props {
 }
 const BulbBase: FC<Props> = ({ stateData: { bulbBase, setBulbBase } }) => {
   const [selected, setSelected] = useState<bulbBase>('E27');
-  const bulbBases = ['E27', 'E14', 'GU10', 'MR16', 'G9'];
   const bulbBaseHandler = (base: bulbBase) => {
     setSelected(base);
     setBulbBase(base);
   };
-
-  // const renderButtons = () => {
-  //   return bulbBases.map(base => {
-  //     return (
-  //       <div className='flex flex-col items-center justify-center'>
-  //         <ButtonPrimary
-  //           key={base}
-  //           data={base}
-  //           className='flex flex-col items-center justify-center'
-  //           onClick={bulbBaseHandler}
-  //           selected={selected === base}
-  //         >
-  //           <img src={e27} alt='' />
-  //         </ButtonPrimary>
-  //         <span className='text-lg font-bold'>{base}</span>
-  //       </div>
-  //     );
-  //   });
-  // };
 
   return (
     <Panel

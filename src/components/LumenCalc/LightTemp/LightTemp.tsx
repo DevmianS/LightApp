@@ -18,7 +18,7 @@ const LightTemp: FC<Props> = ({ stateData: { colorTemp, setColorTemp } }) => {
     setColorTemp(temp);
     setSelected(temp);
   };
-  const colorTemps = ['1800K', '2900K', '4000K', '6000K', '6500K'];
+  const colorTemps = ['1800K', '2700K', '4000K', '6000K', '6500K'];
 
   const renderButtons = () => {
     return colorTemps.map(temp => {

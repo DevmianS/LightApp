@@ -41,7 +41,7 @@ const ResultWindow: FC<Props> = ({
 
   const calcTemp = () => {
     if (colorTemp === '1800K') return 'left-[5%]';
-    if (colorTemp === '2900K') return 'left-[15%]';
+    if (colorTemp === '2700K') return 'left-[15%]';
     if (colorTemp === '4000K') return 'left-[50%]';
     if (colorTemp === '6000K') return 'left-[70%]';
     if (colorTemp === '6500K') return 'left-[92%]';
@@ -81,7 +81,9 @@ const ResultWindow: FC<Props> = ({
         <ResultTile data={{ title: getLang('Bulbs count', 'Ilość żarówek') }}>
           <span className='text-center font-semibold'>{bulbCount}x💡</span>
         </ResultTile>
-        <ResultTile data={{ title: getLang('Base type', 'Rodzaj trzonka') }}>
+        <ResultTile
+          data={{ title: getLang('Base type', 'Rodzaj trzonka/gwintu') }}
+        >
           <span className='text-center font-semibold'>{bulbBase}</span>
         </ResultTile>
         <ResultTile data={{ title: getLang('Lumens', 'Lumeny') }}>

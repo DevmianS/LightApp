@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Panel from '../../UI/Panel';
 import MeterInput from './MeterInput';
 import { getLang } from '../../../utils/utils';
-import surfaceicon from '../../../assets/icons/surface.svg';
+import surfaceicon from '../../../assets/icons/surface.png';
 
 interface Props {
   stateData: {

@@ -15,30 +15,11 @@ interface Props {
 }
 
 const LampType: FC<Props> = ({ stateData: { lampType, setLampType } }) => {
-  const [selected, setSelected] = useState<lampType>('semi');
+  const [selected, setSelected] = useState<lampType>('open');
   const lampTypeHandler = (type: lampType) => {
     setSelected(type);
     setLampType(type);
   };
-  // const lampTypes = ['open', 'semi', 'closed'];
-
-  // const renderButtons = () => {
-  //   return lampTypes.map(type => {
-  //     return (
-  //       <ButtonPrimary
-  //         key={type}
-  //         data={type}
-  //         onClick={lampTypeHandler}
-  //         selected={selected === type}
-  //         className='flex flex-col items-center justify-center'
-  //       >
-  //         <span className='text-4xl'>
-  //           <img src={halfvisible} alt='' />
-  //         </span>
-  //       </ButtonPrimary>
-  //     );
-  //   });
-  // };
 
   return (
     <Panel title={getLang('Lamp type?', 'Typ lampy?')}>
