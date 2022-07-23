@@ -23,7 +23,7 @@ const BrightnessSelector: FC<Props> = ({
   };
 
   return (
-    <Panel title={getLang('How bright you want it?', 'Jak jasno ma być?')}>
+    <Panel title={getLang('How bright?', 'Jak jasno?')}>
       <div className='flex flex-col items-center justify-center'>
         <ButtonPrimary
           className='flex flex-col items-center justify-center text-7xl'
