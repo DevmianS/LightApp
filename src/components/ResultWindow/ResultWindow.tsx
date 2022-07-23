@@ -84,7 +84,7 @@ const ResultWindow: FC<Props> = ({
         <ResultTile
           data={{ title: getLang('Base type', 'Rodzaj trzonka/gwintu') }}
         >
-          <span className='text-center font-semibold'>{bulbBase}</span>
+          <span className='text-center text-2xl font-semibold'>{bulbBase}</span>
         </ResultTile>
         <ResultTile data={{ title: getLang('Lumens', 'Lumeny') }}>
           <span className='text-center font-semibold'>{calculator()}lm</span>
