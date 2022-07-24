@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         <div className='flex gap-1'>
           <img className='h-6 w-6' src={githublogo} alt='github logo' />
-          <a target={'_blank'} href='https://github.com/DevmianS'>
+          <a target={'_blank'} href='https://github.com/DevmianS/LightApp'>
             GitHub
           </a>
         </div>
