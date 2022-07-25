@@ -19,7 +19,9 @@ const SurfaceInput: FC<Props> = ({ stateData: { sqMeters, setSqMeters } }) => {
         'Jaka jest powierzchnia pokoju?'
       )}
     >
-      <img className='h-36' src={surfaceicon} alt='surface icon' />
+      <label htmlFor='meter1'>
+        <img className='h-36' src={surfaceicon} alt='surface icon' />
+      </label>
       {/* <span className='text-6xl'>🔳</span> */}
       <div className='flex w-1/2 items-center justify-center'>
         <MeterInput setSqMeters={setSqMeters} id='meter1' />

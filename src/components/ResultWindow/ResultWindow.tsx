@@ -82,7 +82,7 @@ const ResultWindow: FC<Props> = ({
           <span className='text-center font-semibold'>{bulbCount}x💡</span>
         </ResultTile>
         <ResultTile
-          data={{ title: getLang('Base type', 'Rodzaj trzonka/gwintu') }}
+          data={{ title: getLang('Base type', 'Typ trzonka / gwintu') }}
         >
           <span className='text-center text-2xl font-semibold'>{bulbBase}</span>
         </ResultTile>
